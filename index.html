@@ -1,399 +1,149 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Smart QR Code Generator</title>
-  <meta name="description" content="Create beautiful, customized QR codes for websites, WiFi, contacts, WhatsApp, email and more — free and fully browser-based." />
+  <meta name="description" content="Create beautiful, customized QR codes — free and fully browser-based." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <!-- ============ HEADER ============ -->
   <header class="site-header" id="top">
-    <div class="container header-inner">
-      <a href="#top" class="brand">
-        <span class="brand-mark" aria-hidden="true">
-          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="3" y="3" width="7" height="7" rx="1"></rect>
-            <rect x="14" y="3" width="7" height="7" rx="1"></rect>
-            <rect x="3" y="14" width="7" height="7" rx="1"></rect>
-            <line x1="14" y1="14" x2="14" y2="14"></line>
-            <line x1="14" y1="18" x2="14" y2="18"></line>
-            <line x1="18" y1="14" x2="18" y2="14"></line>
-            <line x1="21" y1="21" x2="21" y2="21"></line>
-            <line x1="18" y1="21" x2="18" y2="21"></line>
-            <line x1="21" y1="17" x2="21" y2="17"></line>
-          </svg>
-        </span>
-        <span class="brand-text">Smart QR<span class="brand-accent">Code</span></span>
-      </a>
+    <a href="#top" class="brand">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="3" width="7" height="7" rx="1"></rect>
+          <rect x="14" y="3" width="7" height="7" rx="1"></rect>
+          <rect x="3" y="14" width="7" height="7" rx="1"></rect>
+          <line x1="14" y1="14" x2="14" y2="14"></line>
+          <line x1="14" y1="18" x2="14" y2="18"></line>
+          <line x1="18" y1="14" x2="18" y2="14"></line>
+          <line x1="21" y1="21" x2="21" y2="21"></line>
+          <line x1="18" y1="21" x2="18" y2="21"></line>
+          <line x1="21" y1="17" x2="21" y2="17"></line>
+        </svg>
+      </span>
+      <span class="brand-text">Smart QR<span class="brand-accent">Code</span></span>
+    </a>
 
-      <nav class="main-nav" aria-label="Primary">
-        <a href="#generator">Generator</a>
-        <a href="#features">Features</a>
-        <a href="#faq">FAQ</a>
-      </nav>
-
-      <button id="themeToggle" class="theme-toggle" type="button" aria-label="Toggle dark mode" data-tip="Toggle dark / light mode">
-        <svg class="icon-sun" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><line x1="12" y1="2" x2="12" y2="4"></line><line x1="12" y1="20" x2="12" y2="22"></line><line x1="4.93" y1="4.93" x2="6.34" y2="6.34"></line><line x1="17.66" y1="17.66" x2="19.07" y2="19.07"></line><line x1="2" y1="12" x2="4" y2="12"></line><line x1="20" y1="12" x2="22" y2="12"></line><line x1="4.93" y1="19.07" x2="6.34" y2="17.66"></line><line x1="17.66" y1="6.34" x2="19.07" y2="4.93"></line></svg>
-        <svg class="icon-moon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
-      </button>
-    </div>
+    <button id="themeToggle" class="theme-toggle" type="button" aria-label="Toggle dark mode" data-tip="Toggle dark / light mode">
+      <svg class="icon-sun" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><line x1="12" y1="2" x2="12" y2="4"></line><line x1="12" y1="20" x2="12" y2="22"></line><line x1="4.93" y1="4.93" x2="6.34" y2="6.34"></line><line x1="17.66" y1="17.66" x2="19.07" y2="19.07"></line><line x1="2" y1="12" x2="4" y2="12"></line><line x1="20" y1="12" x2="22" y2="12"></line><line x1="4.93" y1="19.07" x2="6.34" y2="17.66"></line><line x1="17.66" y1="6.34" x2="19.07" y2="4.93"></line></svg>
+      <svg class="icon-moon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+    </button>
   </header>
 
-  <!-- ============ HERO ============ -->
-  <section class="hero">
-    <div class="hero-glow" aria-hidden="true"></div>
-    <div class="container hero-inner">
-      <span class="hero-badge">100% Free • Browser-based • No sign-up</span>
-      <h1 class="hero-title">Create Beautiful QR Codes <span class="grad-text">in Seconds</span></h1>
-      <p class="hero-subtitle">Generate customized QR codes for websites, WiFi, contacts, WhatsApp, email, and more.</p>
-      <a href="#generator" class="btn btn-primary btn-lg">Start Creating</a>
-    </div>
-  </section>
-
-  <!-- ============ GENERATOR ============ -->
-  <section class="generator" id="generator">
-    <div class="container">
-      <h2 class="section-title">QR Code Generator</h2>
-      <p class="section-sub">Pick a type, fill in the details, and customize your design.</p>
-
-      <div class="generator-grid">
-        <!-- ===== LEFT COLUMN ===== -->
-        <div class="panel left-panel">
-
-          <!-- Type selector -->
+  <!-- ============ APP ============ -->
+  <main class="app">
+    <div class="app-grid">
+      <!-- ===== LEFT COLUMN ===== -->
+      <section class="panel left-panel">
+        <div class="panel-scroll">
+          <!-- URL input -->
           <div class="field-block">
-            <label class="block-label">QR Code Type</label>
-            <div class="type-selector" id="typeSelector" role="tablist" aria-label="QR code type">
-              <button class="type-btn active" data-type="url" role="tab" aria-selected="true">🌐 URL</button>
-              <button class="type-btn" data-type="text" role="tab">📝 Text</button>
-              <button class="type-btn" data-type="email" role="tab">✉️ Email</button>
-              <button class="type-btn" data-type="phone" role="tab">📞 Phone</button>
-              <button class="type-btn" data-type="sms" role="tab">💬 SMS</button>
-              <button class="type-btn" data-type="whatsapp" role="tab">🟢 WhatsApp</button>
-              <button class="type-btn" data-type="wifi" role="tab">📶 WiFi</button>
-              <button class="type-btn" data-type="vcard" role="tab">👤 vCard</button>
-            </div>
-          </div>
-
-          <!-- Dynamic inputs -->
-          <div class="field-block">
-            <label class="block-label">Content</label>
-
-            <!-- URL -->
-            <div class="field-group active" data-group="url">
-              <label class="field">
-                <span>Website URL</span>
-                <input type="url" id="url-link" placeholder="https://example.com" autocomplete="off" />
-              </label>
-            </div>
-
-            <!-- Text -->
-            <div class="field-group" data-group="text">
-              <label class="field">
-                <span>Plain Text</span>
-                <textarea id="text-content" rows="3" placeholder="Type any text here..."></textarea>
-              </label>
-            </div>
-
-            <!-- Email -->
-            <div class="field-group" data-group="email">
-              <label class="field">
-                <span>Email Address</span>
-                <input type="email" id="email-to" placeholder="name@example.com" />
-              </label>
-              <label class="field">
-                <span>Subject <em>(optional)</em></span>
-                <input type="text" id="email-subject" placeholder="Subject line" />
-              </label>
-              <label class="field">
-                <span>Message <em>(optional)</em></span>
-                <textarea id="email-body" rows="2" placeholder="Your message"></textarea>
-              </label>
-            </div>
-
-            <!-- Phone -->
-            <div class="field-group" data-group="phone">
-              <label class="field">
-                <span>Phone Number</span>
-                <input type="tel" id="phone-number" placeholder="+1 234 567 8900" />
-              </label>
-            </div>
-
-            <!-- SMS -->
-            <div class="field-group" data-group="sms">
-              <label class="field">
-                <span>Phone Number</span>
-                <input type="tel" id="sms-number" placeholder="+1 234 567 8900" />
-              </label>
-              <label class="field">
-                <span>Message <em>(optional)</em></span>
-                <textarea id="sms-message" rows="2" placeholder="Pre-filled message"></textarea>
-              </label>
-            </div>
-
-            <!-- WhatsApp -->
-            <div class="field-group" data-group="whatsapp">
-              <label class="field">
-                <span>WhatsApp Number <em>(with country code)</em></span>
-                <input type="tel" id="wa-number" placeholder="12345678900" />
-              </label>
-              <label class="field">
-                <span>Message <em>(optional)</em></span>
-                <textarea id="wa-message" rows="2" placeholder="Pre-filled message"></textarea>
-              </label>
-            </div>
-
-            <!-- WiFi -->
-            <div class="field-group" data-group="wifi">
-              <label class="field">
-                <span>Network Name (SSID)</span>
-                <input type="text" id="wifi-ssid" placeholder="MyHomeWiFi" />
-              </label>
-              <label class="field">
-                <span>Password</span>
-                <input type="text" id="wifi-password" placeholder="Network password" />
-              </label>
-              <label class="field">
-                <span>Encryption</span>
-                <select id="wifi-encryption">
-                  <option value="WPA">WPA / WPA2</option>
-                  <option value="WEP">WEP</option>
-                  <option value="nopass">No password</option>
-                </select>
-              </label>
-              <label class="checkbox-field">
-                <input type="checkbox" id="wifi-hidden" />
-                <span>Hidden network</span>
-              </label>
-            </div>
-
-            <!-- vCard -->
-            <div class="field-group" data-group="vcard">
-              <div class="field-row">
-                <label class="field"><span>First Name</span><input type="text" id="vc-first" placeholder="Jane" /></label>
-                <label class="field"><span>Last Name</span><input type="text" id="vc-last" placeholder="Doe" /></label>
-              </div>
-              <label class="field"><span>Company</span><input type="text" id="vc-org" placeholder="Acme Inc." /></label>
-              <label class="field"><span>Job Title</span><input type="text" id="vc-title" placeholder="Marketing Manager" /></label>
-              <label class="field"><span>Phone</span><input type="tel" id="vc-phone" placeholder="+1 234 567 8900" /></label>
-              <label class="field"><span>Email</span><input type="email" id="vc-email" placeholder="jane@example.com" /></label>
-              <label class="field"><span>Website</span><input type="url" id="vc-website" placeholder="https://example.com" /></label>
-              <label class="field"><span>Address</span><input type="text" id="vc-address" placeholder="123 Main St, City, Country" /></label>
-            </div>
-
+            <label class="block-label" for="url-link">Website URL</label>
+            <label class="field">
+              <input type="url" id="url-link" placeholder="https://example.com" autocomplete="off" autofocus />
+            </label>
             <p class="field-error" id="fieldError" role="alert"></p>
           </div>
 
-          <!-- Customization accordion -->
-          <div class="accordion">
-            <div class="accordion-item open">
-              <button class="accordion-head" type="button" aria-expanded="true">
-                <span>🎨 Design &amp; Colors</span>
-                <svg class="chev" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
-              </button>
-              <div class="accordion-body">
-                <div class="field-row">
-                  <label class="field color-field">
-                    <span>Foreground <em data-tip="The color of the QR dots">ⓘ</em></span>
-                    <input type="color" id="fgColor" value="#5b2be0" />
-                  </label>
-                  <label class="field color-field">
-                    <span>Background</span>
-                    <input type="color" id="bgColor" value="#ffffff" />
-                  </label>
-                </div>
-
-                <label class="field">
-                  <span>Size: <strong id="sizeValue">320</strong> px</span>
-                  <input type="range" id="qrSize" min="160" max="800" step="20" value="320" />
-                </label>
-
-                <label class="field">
-                  <span>Error Correction <em data-tip="Higher = more damage-resistant, denser code">ⓘ</em></span>
-                  <select id="ecLevel">
-                    <option value="L">Low (7%)</option>
-                    <option value="M">Medium (15%)</option>
-                    <option value="Q" selected>Quartile (25%)</option>
-                    <option value="H">High (30%)</option>
-                  </select>
-                </label>
-
-                <div class="field-row">
-                  <label class="field">
-                    <span>Dot Style</span>
-                    <select id="dotStyle">
-                      <option value="square">Square</option>
-                      <option value="rounded" selected>Rounded</option>
-                      <option value="dots">Dots</option>
-                      <option value="classy">Classy</option>
-                      <option value="classy-rounded">Classy Rounded</option>
-                      <option value="extra-rounded">Extra Rounded</option>
-                    </select>
-                  </label>
-                  <label class="field">
-                    <span>Corner Style</span>
-                    <select id="cornerStyle">
-                      <option value="square">Square</option>
-                      <option value="extra-rounded" selected>Rounded</option>
-                      <option value="dot">Dot</option>
-                    </select>
-                  </label>
-                </div>
-
-                <label class="checkbox-field">
-                  <input type="checkbox" id="roundedCorners" checked />
-                  <span>Rounded corner dots</span>
-                </label>
-                <label class="checkbox-field">
-                  <input type="checkbox" id="transparentBg" />
-                  <span>Transparent background</span>
-                </label>
-              </div>
+          <!-- Color scheme -->
+          <div class="field-block">
+            <label class="block-label">Color Scheme</label>
+            <div class="swatches" id="swatches" role="group" aria-label="Color presets">
+              <button class="swatch active" type="button" data-fg="#111827" data-bg="#ffffff" style="--c:#111827" data-tip="Classic"></button>
+              <button class="swatch" type="button" data-fg="#0d9488" data-bg="#ffffff" style="--c:#0d9488" data-tip="Teal"></button>
+              <button class="swatch" type="button" data-fg="#2563eb" data-bg="#ffffff" style="--c:#2563eb" data-tip="Blue"></button>
+              <button class="swatch" type="button" data-fg="#16a34a" data-bg="#ffffff" style="--c:#16a34a" data-tip="Green"></button>
+              <button class="swatch" type="button" data-fg="#dc2626" data-bg="#ffffff" style="--c:#dc2626" data-tip="Red"></button>
+              <button class="swatch" type="button" data-fg="#f8fafc" data-bg="#0f172a" style="--c:#0f172a" data-tip="Inverted"></button>
             </div>
-
-            <div class="accordion-item">
-              <button class="accordion-head" type="button" aria-expanded="false">
-                <span>🖼️ Logo</span>
-                <svg class="chev" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
-              </button>
-              <div class="accordion-body">
-                <div class="logo-upload">
-                  <label class="upload-drop" for="logoInput" id="logoDrop">
-                    <span class="upload-thumb" id="logoThumb">
-                      <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
-                    </span>
-                    <span class="upload-text">Click to upload<br /><em>PNG, JPG or SVG</em></span>
-                  </label>
-                  <input type="file" id="logoInput" accept="image/png,image/jpeg,image/svg+xml" hidden />
-                </div>
-                <label class="field" id="logoSizeField" hidden>
-                  <span>Logo Size: <strong id="logoSizeValue">40</strong>%</span>
-                  <input type="range" id="logoSize" min="10" max="50" step="2" value="40" />
-                </label>
-                <button class="btn btn-ghost btn-sm" id="removeLogo" type="button" hidden>Remove Logo</button>
-              </div>
+            <div class="field-row">
+              <label class="field color-field">
+                <span>Foreground</span>
+                <input type="color" id="fgColor" value="#111827" />
+              </label>
+              <label class="field color-field">
+                <span>Background</span>
+                <input type="color" id="bgColor" value="#ffffff" />
+              </label>
             </div>
+          </div>
+
+          <!-- Logo -->
+          <div class="field-block">
+            <label class="block-label">Logo <em>(optional)</em></label>
+            <div class="logo-upload">
+              <label class="upload-drop" for="logoInput" id="logoDrop">
+                <span class="upload-thumb" id="logoThumb">
+                  <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+                </span>
+                <span class="upload-text">Click to upload<br /><em>PNG, JPG or SVG</em></span>
+              </label>
+              <input type="file" id="logoInput" accept="image/png,image/jpeg,image/svg+xml" hidden />
+            </div>
+            <label class="field" id="logoSizeField" hidden>
+              <span>Logo Size: <strong id="logoSizeValue">40</strong>%</span>
+              <input type="range" id="logoSize" min="10" max="50" step="2" value="40" />
+            </label>
+            <button class="btn btn-ghost btn-sm" id="removeLogo" type="button" hidden>Remove Logo</button>
           </div>
 
           <!-- Download row -->
           <div class="field-block download-block">
             <label class="block-label">Download &amp; Export</label>
             <div class="download-row">
-              <button class="btn btn-primary" id="dlPng" type="button">PNG</button>
-              <button class="btn btn-secondary" id="dlJpg" type="button">JPG</button>
-              <button class="btn btn-secondary" id="dlSvg" type="button">SVG</button>
-              <button class="btn btn-ghost" id="copyBtn" type="button" data-tip="Copy image to clipboard">📋 Copy</button>
-              <button class="btn btn-ghost" id="resetBtn" type="button">↺ Reset</button>
+              <button class="btn btn-primary" id="dlPng" type="button">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                PNG
+              </button>
+              <button class="btn btn-secondary" id="dlSvg" type="button">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                SVG
+              </button>
+              <button class="btn btn-ghost" id="copyBtn" type="button" data-tip="Copy image to clipboard">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                Copy
+              </button>
+              <button class="btn btn-ghost" id="resetBtn" type="button">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"></polyline><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path></svg>
+                Reset
+              </button>
             </div>
             <p class="toast" id="toast" role="status"></p>
           </div>
         </div>
+      </section>
 
-        <!-- ===== RIGHT COLUMN ===== -->
-        <div class="panel right-panel">
-          <div class="preview-sticky">
-            <div class="qr-stage" id="qrStage">
-              <div class="qr-canvas" id="qrCanvas"></div>
-              <div class="qr-placeholder" id="qrPlaceholder">
-                <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"></rect><rect x="14" y="3" width="7" height="7" rx="1"></rect><rect x="3" y="14" width="7" height="7" rx="1"></rect></svg>
-                <p>Your QR code will appear here</p>
-              </div>
-            </div>
-
-            <div class="qr-info">
-              <div class="qr-info-row"><span>Type</span><strong id="infoType">URL / Website</strong></div>
-              <div class="qr-info-row"><span>Content</span><strong id="infoContent" class="truncate">—</strong></div>
-            </div>
-
-            <div class="scan-reminder">
-              <span aria-hidden="true">✅</span> Test your QR code before printing
-            </div>
+      <!-- ===== RIGHT COLUMN ===== -->
+      <section class="panel right-panel">
+        <div class="qr-stage" id="qrStage">
+          <div class="qr-canvas" id="qrCanvas"></div>
+          <div class="qr-placeholder" id="qrPlaceholder">
+            <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"></rect><rect x="14" y="3" width="7" height="7" rx="1"></rect><rect x="3" y="14" width="7" height="7" rx="1"></rect></svg>
+            <p>Enter a URL to generate your QR code</p>
           </div>
         </div>
-      </div>
+        <div class="qr-info">
+          <div class="qr-info-row"><span>Content</span><strong id="infoContent" class="truncate">—</strong></div>
+        </div>
+        <div class="scan-reminder">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          Test your QR code before printing
+        </div>
+      </section>
     </div>
-  </section>
-
-  <!-- ============ FEATURES ============ -->
-  <section class="features" id="features">
-    <div class="container">
-      <h2 class="section-title">Why You'll Love It</h2>
-      <p class="section-sub">Everything you need to create professional QR codes.</p>
-      <div class="feature-grid">
-        <article class="feature-card">
-          <div class="feature-icon">🔀</div>
-          <h3>Multiple QR Types</h3>
-          <p>URL, text, email, phone, SMS, WhatsApp, WiFi and vCard — all in one place.</p>
-        </article>
-        <article class="feature-card">
-          <div class="feature-icon">🎨</div>
-          <h3>Custom Colors &amp; Styles</h3>
-          <p>Pick your colors, dot shapes, and corner styles to match your brand.</p>
-        </article>
-        <article class="feature-card">
-          <div class="feature-icon">🖼️</div>
-          <h3>Logo Support</h3>
-          <p>Drop your logo right in the center of the QR code for a branded look.</p>
-        </article>
-        <article class="feature-card">
-          <div class="feature-icon">⬇️</div>
-          <h3>PNG, JPG &amp; SVG</h3>
-          <p>Download in the format you need — perfect for web or high-res printing.</p>
-        </article>
-        <article class="feature-card">
-          <div class="feature-icon">🔒</div>
-          <h3>Fully Browser-Based</h3>
-          <p>Everything runs locally in your browser. Your data never leaves your device.</p>
-        </article>
-        <article class="feature-card">
-          <div class="feature-icon">📱</div>
-          <h3>Mobile Friendly</h3>
-          <p>A responsive interface that works beautifully on phones, tablets and desktops.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ FAQ ============ -->
-  <section class="faq" id="faq">
-    <div class="container container-narrow">
-      <h2 class="section-title">Frequently Asked Questions</h2>
-      <div class="accordion faq-accordion">
-        <div class="accordion-item">
-          <button class="accordion-head" type="button" aria-expanded="false"><span>Is this QR code generator free?</span><svg class="chev" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
-          <div class="accordion-body"><p>Yes — it's completely free with no sign-up, no watermarks, and no limits on how many QR codes you create.</p></div>
-        </div>
-        <div class="accordion-item">
-          <button class="accordion-head" type="button" aria-expanded="false"><span>Are QR codes generated locally?</span><svg class="chev" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
-          <div class="accordion-body"><p>Absolutely. All generation happens in your browser using JavaScript. Nothing you type — including passwords and contact details — is ever sent to a server.</p></div>
-        </div>
-        <div class="accordion-item">
-          <button class="accordion-head" type="button" aria-expanded="false"><span>Can I add my company logo?</span><svg class="chev" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
-          <div class="accordion-body"><p>Yes. Upload a PNG, JPG or SVG logo and it'll be placed in the center. Tip: use a higher error-correction level (Q or H) so the code still scans reliably.</p></div>
-        </div>
-        <div class="accordion-item">
-          <button class="accordion-head" type="button" aria-expanded="false"><span>Can I use the QR code for printing?</span><svg class="chev" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
-          <div class="accordion-body"><p>Definitely. For print, increase the size and download the SVG (infinitely scalable) or a large PNG. Always test the printed code before mass production.</p></div>
-        </div>
-        <div class="accordion-item">
-          <button class="accordion-head" type="button" aria-expanded="false"><span>What QR code format should I download?</span><svg class="chev" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
-          <div class="accordion-body"><p>Use <strong>PNG</strong> for web and most everyday use, <strong>SVG</strong> for print and large-scale graphics, and <strong>JPG</strong> only when you specifically need a JPEG (note: JPG has no transparency).</p></div>
-        </div>
-      </div>
-    </div>
-  </section>
+  </main>
 
   <!-- ============ FOOTER ============ -->
   <footer class="site-footer">
-    <div class="container">
-      <p>Powered by <strong>Tertiary Infotech Academy</strong></p>
-      <p class="footer-sub">Built with HTML, CSS &amp; JavaScript • 100% client-side</p>
-    </div>
+    <p>Powered by
+      <a href="https://www.tertiarycourses.com.sg/" target="_blank" rel="noopener noreferrer">Tertiary Infotech Academy Pte Ltd</a>
+    </p>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/qr-code-styling/lib/qr-code-styling.js"></script>

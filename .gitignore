@@ -4,3 +4,7 @@ Thumbs.db
 *.log
 .vscode/
 .idea/
+
+# Playwright / Claude local
+.playwright-mcp/
+.claude/settings.local.json
