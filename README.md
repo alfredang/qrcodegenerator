@@ -10,7 +10,7 @@
 
 **A lightweight, browser-based QR code generator with a modern dark UI.**
 
-Enter a URL, pick a color scheme, add a logo, and download — all 100% client-side.
+Generate QR codes for **URLs, WhatsApp, Telegram & WiFi** — pick a color scheme, add a logo, and download, all 100% client-side.
 
 [Live Demo](https://alfredang.github.io/qrcodegenerator/) · [Report Bug](https://github.com/alfredang/qrcodegenerator/issues) · [Request Feature](https://github.com/alfredang/qrcodegenerator/issues)
 
@@ -18,21 +18,31 @@ Enter a URL, pick a color scheme, add a logo, and download — all 100% client-s
 
 ## Screenshot
 
-![Screenshot](screenshot.png)
+![Screenshot](preview.png)
 
 ## About
 
-Smart QR Code Generator is a focused, single-screen web app for creating clean QR codes fast. There's no backend and no build step — just open it and start typing. Everything runs locally in your browser, so the URL you enter never leaves your device.
+Smart QR Code Generator is a focused, single-screen web app for creating clean QR codes fast. There's no backend and no build step — just open it and start typing. Everything runs locally in your browser, so the data you enter never leaves your device.
 
-The interface is deliberately minimal: a URL field and live preview side by side, fitting in a single viewport.
+Pick a **QR type** — Website URL, WhatsApp, Telegram, or WiFi — fill in the relevant fields, and watch the live preview update beside the inputs, all within a single viewport.
+
+### QR Types
+
+| Type | What it does |
+|------|--------------|
+| 🔗 **URL** | Any website link, with automatic `https://` prefixing |
+| 💬 **WhatsApp** | Country code + phone (and an optional pre-filled message) → a `wa.me` chat link, with the WhatsApp logo auto-embedded |
+| ✈️ **Telegram** | A `@username` or phone number → a `t.me` link, with the Telegram logo auto-embedded |
+| 📶 **WiFi** | SSID, password, encryption (WPA/WEP/open) and hidden-network flag → a standard `WIFI:` payload phones recognize for one-tap connect |
 
 ### Features
 
 | Feature | Description |
 |---------|-------------|
-| ⚡ **Instant preview** | The QR code updates live as you type, with automatic `https://` prefixing |
+| ⚡ **Instant preview** | The QR code updates live as you type |
+| 🏷️ **Brand logos** | WhatsApp & Telegram codes embed their brand logo automatically |
 | 🎨 **Color schemes** | One-click preset palettes plus custom foreground/background color pickers |
-| 🖼️ **Logo upload** | Drop a PNG, JPG or SVG into the center, with adjustable size |
+| 🖼️ **Logo upload** | Drop a PNG, JPG or SVG into the center, with adjustable size (overrides the brand logo) |
 | ⬇️ **PNG & SVG export** | Download a crisp raster PNG or scalable SVG, or copy the image to your clipboard |
 | 🌗 **Dark / light theme** | Modern dark theme by default; toggle is persisted in `localStorage` |
 | 🔒 **Private & offline** | No server, no tracking — all generation happens in the browser |
@@ -63,8 +73,8 @@ The interface is deliberately minimal: a URL field and live preview side by side
 │                 │                                        │ │
 │                 ▼                                        │ │
 │     ┌───────────────────────┐    ┌────────────────────┐ │ │
-│     │  Input + controls      │ →  │  buildOptions()    │ │ │
-│     │  url · colors · logo   │    │  (debounced)       │ │ │
+│     │  Type tabs + inputs    │ →  │  buildContent()    │ │ │
+│     │  url/chat/wifi · style │    │  buildOptions()    │ │ │
 │     └───────────────────────┘    └─────────┬──────────┘ │ │
 │                                             ▼            │ │
 │                                  ┌────────────────────┐  │ │
@@ -82,10 +92,10 @@ The interface is deliberately minimal: a URL field and live preview side by side
 
 ```
 qrcodegenerator/
-├── index.html      # Header, URL input, color schemes, logo, preview, footer
+├── index.html      # Header, QR-type tabs (URL/WhatsApp/Telegram/WiFi), controls, preview, footer
 ├── styles.css      # Dark-first theme tokens, single-viewport layout
-├── app.js          # QR generation, color/logo handling, download, theme toggle
-├── screenshot.png  # App preview (used in this README)
+├── app.js          # Per-type content building, brand logos, color/logo handling, download, theme
+├── preview.png     # App preview (used in this README)
 └── README.md
 ```
 
