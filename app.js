@@ -368,6 +368,8 @@
     el.tgHandle.value = "";
     el.wifiSsid.value = "";
     el.wifiPass.value = "";
+    el.wifiPass.classList.remove("revealed");
+    el.wifiPassToggle.classList.remove("revealed");
     el.wifiEnc.value = "WPA";
     el.wifiHidden.checked = false;
     el.logoSize.value = DEFAULTS.logoSize;
@@ -414,12 +416,12 @@
     el.wifiEnc.addEventListener("change", renderQR);
     el.wifiHidden.addEventListener("change", renderQR);
 
-    // WiFi password reveal
+    // WiFi password reveal (toggles CSS masking, not the input type)
     el.wifiPassToggle.addEventListener("click", () => {
-      const show = el.wifiPass.type === "password";
-      el.wifiPass.type = show ? "text" : "password";
-      el.wifiPassToggle.classList.toggle("revealed", show);
-      el.wifiPassToggle.setAttribute("aria-label", show ? "Hide password" : "Show password");
+      const reveal = !el.wifiPass.classList.contains("revealed");
+      el.wifiPass.classList.toggle("revealed", reveal);
+      el.wifiPassToggle.classList.toggle("revealed", reveal);
+      el.wifiPassToggle.setAttribute("aria-label", reveal ? "Hide password" : "Show password");
     });
 
     // Color swatches
