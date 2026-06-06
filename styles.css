@@ -271,6 +271,16 @@ textarea, select {
 input:focus, textarea:focus, select:focus {
   outline: none; border-color: var(--accent); box-shadow: 0 0 0 4px var(--ring);
 }
+/* Kill the browser autofill / password-manager white background so inputs
+   keep the dark theme. */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-text-fill-color: var(--text);
+  -webkit-box-shadow: 0 0 0 1000px var(--surface-solid) inset;
+  caret-color: var(--text);
+  transition: background-color 9999s ease-out 0s;
+}
 textarea { resize: vertical; min-height: 56px; }
 input::placeholder, textarea::placeholder { color: var(--text-faint); }
 
@@ -344,9 +354,9 @@ input[type="range"]::-moz-range-thumb {
 .type-tab:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 
 /* Password reveal */
-.pw-wrap { position: relative; display: flex; }
-.pw-wrap input { padding-right: 46px; }
-.pw-toggle {
+.pw-wrap { position: relative; display: block; width: 100%; }
+.pw-wrap input { width: 100%; padding-right: 46px; }
+.pw-wrap .pw-toggle {
   position: absolute; right: 6px; top: 50%; transform: translateY(-50%);
   width: 34px; height: 34px; display: grid; place-items: center;
   border: none; background: transparent; color: var(--text-faint);
